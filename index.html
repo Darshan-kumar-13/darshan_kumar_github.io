@@ -1,0 +1,3936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Darshan Kumar G — Instrumentation & Control Engineer</title>
+
+<meta name="description"
+content="Darshan Kumar G — Instrumentation & Control Engineer Portfolio">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+.background-slideshow {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+    background-image: url("C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: opacity 1.5s ease-in-out;
+
+    animation: kenburns 12s ease-in-out infinite alternate;
+}
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -9;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.75)
+        );
+
+    pointer-events: none;
+}
+
+@keyframes kenburns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --cyan:#61f5ff;
+    --blue:#3298ff;
+    --purple:#9c70ff;
+    --pink:#ff64cf;
+    --gold:#ffe38a;
+    --green:#8dffbf;
+
+    --white:#ffffff;
+    --muted:#b9b5c4;
+
+    --glass:rgba(10,12,25,.42);
+    --glass2:rgba(255,255,255,.065);
+
+    --line:rgba(255,255,255,.16);
+
+    --shadow:
+        0 25px 80px rgba(0,0,0,.55);
+
+    --glow:
+        0 0 35px rgba(97,245,255,.18);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Space Grotesk",sans-serif;
+    color:white;
+    background:#03040b;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+
+/* =========================================================
+   CINEMATIC ANIME BACKGROUND
+========================================================= */
+
+.anime-background{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:-10;
+
+    background:#03040b;
+}
+
+.anime-background img{
+    position:absolute;
+
+    width:110%;
+    height:110%;
+
+    left:-5%;
+    top:-5%;
+
+    object-fit:cover;
+
+    filter:
+        brightness(.48)
+        contrast(1.15)
+        saturate(1.08);
+
+    transform:
+        translate3d(
+            var(--mouse-x,0px),
+            var(--mouse-y,0px),
+            0
+        )
+        scale(1.05);
+
+    animation:
+        cinematicZoom 22s ease-in-out infinite alternate;
+
+    transition:
+        transform .25s ease-out;
+}
+
+@keyframes cinematicZoom{
+
+    0%{
+        transform:
+            translate3d(
+                var(--mouse-x,0px),
+                var(--mouse-y,0px),
+                0
+            )
+            scale(1.04);
+    }
+
+    100%{
+        transform:
+            translate3d(
+                var(--mouse-x,0px),
+                var(--mouse-y,0px),
+                0
+            )
+            scale(1.12);
+    }
+}
+
+
+/* dark cinematic layer */
+
+.anime-background::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,3,10,.94) 0%,
+            rgba(2,3,10,.72) 30%,
+            rgba(2,3,10,.28) 58%,
+            rgba(2,3,10,.65) 100%
+        );
+
+    pointer-events:none;
+}
+
+
+/* atmospheric color */
+
+.anime-color{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(0,220,255,.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 82% 35%,
+            rgba(255,70,190,.14),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5,8,25,.2),
+            rgba(3,4,12,.8)
+        );
+
+    mix-blend-mode:screen;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.8);
+
+    opacity:.5;
+
+    animation:
+        particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+
+    from{
+        transform:
+            translateY(110vh)
+            translateX(0);
+    }
+
+    to{
+        transform:
+            translateY(-10vh)
+            translateX(80px);
+    }
+}
+
+
+/* =========================================================
+   SCANLINES
+========================================================= */
+
+.scanlines{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    pointer-events:none;
+
+    opacity:.13;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,.025) 4px
+        );
+
+    mix-blend-mode:overlay;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid-overlay{
+    position:fixed;
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 88%
+        );
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.wrap{
+    width:min(1240px,92%);
+    margin:auto;
+}
+
+section{
+    position:relative;
+    padding:120px 0;
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(22px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(22px)
+        saturate(130%);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.16),
+        0 25px 70px rgba(0,0,0,.48);
+
+    border-radius:26px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+header{
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    padding:15px 0;
+}
+
+.nav{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:11px 14px;
+
+    border-radius:22px;
+
+    background:
+        rgba(5,7,18,.65);
+
+    backdrop-filter:blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.4);
+}
+
+.brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-family:Rajdhani;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+}
+
+.brandmark{
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:13px;
+
+    color:#050611;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 0 30px rgba(97,245,255,.35);
+}
+
+nav ul{
+    display:flex;
+
+    list-style:none;
+
+    gap:4px;
+}
+
+nav a{
+    display:block;
+
+    padding:10px 12px;
+
+    border-radius:12px;
+
+    font:
+        600 11px Rajdhani;
+
+    letter-spacing:1px;
+
+    color:#c9c5d1;
+
+    transition:.25s;
+}
+
+nav a:hover,
+nav a.active{
+    color:white;
+
+    background:
+        rgba(97,245,255,.08);
+
+    box-shadow:
+        inset 0 -2px var(--cyan);
+
+    text-shadow:
+        0 0 12px var(--cyan);
+}
+
+.menu{
+    display:none;
+
+    border:0;
+
+    background:none;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+#home{
+    min-height:100vh;
+
+    padding-top:145px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero{
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+
+/* Tokyo vertical label */
+
+.tokyo-label{
+    position:absolute;
+
+    left:20px;
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    writing-mode:
+        vertical-rl;
+
+    font:
+        700 46px Rajdhani;
+
+    letter-spacing:8px;
+
+    color:rgba(255,255,255,.13);
+
+    user-select:none;
+}
+
+
+/* badge */
+
+.badge{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:9px 14px;
+
+    border-radius:999px;
+
+    color:var(--cyan);
+
+    border:
+        1px solid rgba(97,245,255,.32);
+
+    background:
+        rgba(97,245,255,.045);
+
+    font:
+        600 10px Rajdhani;
+
+    letter-spacing:2px;
+
+    box-shadow:
+        0 0 25px rgba(97,245,255,.08);
+}
+
+.pulse{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 15px var(--green);
+
+    animation:pulse 1.7s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        opacity:.35;
+        transform:scale(.6);
+    }
+}
+
+
+/* title */
+
+.hero h1{
+    margin-top:24px;
+
+    font:
+        700 clamp(65px,9vw,118px)/.82 Rajdhani;
+
+    letter-spacing:-5px;
+
+    text-shadow:
+        0 15px 50px rgba(0,0,0,.65);
+}
+
+.hero h1 .small{
+    display:block;
+
+    font-size:.28em;
+
+    letter-spacing:4px;
+
+    color:#d8d4df;
+
+    margin-bottom:18px;
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    50%{
+        background-position:100%;
+    }
+}
+
+
+/* hero description */
+
+.hero-description{
+    max-width:650px;
+
+    margin-top:28px;
+
+    color:#d0ccd7;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    text-shadow:
+        0 3px 20px #000;
+}
+
+
+/* =========================================================
+   3D BUTTONS
+========================================================= */
+
+.actions{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin-top:32px;
+}
+
+.btn{
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:11px;
+
+    min-width:170px;
+
+    padding:16px 21px;
+
+    border-radius:16px;
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.2),
+        0 10px 0 rgba(0,0,0,.35),
+        0 20px 40px rgba(0,0,0,.35);
+
+    font:
+        700 12px Rajdhani;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    transform:
+        translateY(0);
+
+    transition:
+        .25s cubic-bezier(.2,.8,.2,1);
+}
+
+.btn::before{
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+    top:0;
+
+    width:70%;
+    height:100%;
+
+    transform:skewX(-25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transition:.65s;
+}
+
+.btn:hover::before{
+    left:150%;
+}
+
+.btn:hover{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.3),
+        0 15px 0 rgba(0,0,0,.3),
+        0 25px 55px rgba(97,245,255,.22);
+}
+
+.btn:active{
+    transform:
+        translateY(5px);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.15),
+        0 5px 0 rgba(0,0,0,.4);
+}
+
+.btn.primary{
+    background:
+        linear-gradient(
+            135deg,
+            #0ecbdc,
+            #675cff 58%,
+            #dc48c0
+        );
+
+    border:0;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.4),
+        0 9px 0 #241d62,
+        0 20px 50px rgba(128,76,255,.35);
+}
+
+.btn.linkedin{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40,135,255,.65),
+            rgba(20,70,150,.3)
+        );
+}
+
+.btn.github{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.16),
+            rgba(30,35,45,.4)
+        );
+}
+
+
+/* =========================================================
+   HERO SIDE PANEL
+========================================================= */
+
+.hero-panel{
+    position:relative;
+
+    min-height:440px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+}
+
+
+/* decorative ring */
+
+.hero-panel::before{
+    content:"";
+
+    position:absolute;
+
+    width:410px;
+    height:410px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(97,245,255,.2);
+
+    box-shadow:
+        0 0 70px rgba(97,245,255,.08);
+
+    animation:
+        rotateRing 18s linear infinite;
+}
+
+@keyframes rotateRing{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* crosshair */
+
+.crosshair{
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border:
+        1px solid rgba(97,245,255,.35);
+
+    border-radius:50%;
+
+    opacity:.7;
+}
+
+.crosshair::before,
+.crosshair::after{
+    content:"";
+
+    position:absolute;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan);
+}
+
+.crosshair::before{
+    width:1px;
+    height:150px;
+
+    left:50%;
+    top:-15px;
+}
+
+.crosshair::after{
+    width:150px;
+    height:1px;
+
+    top:50%;
+    left:-15px;
+}
+
+
+/* floating quote */
+
+.quote{
+    position:absolute;
+
+    top:10px;
+    left:-40px;
+
+    max-width:230px;
+
+    padding:17px;
+
+    color:#c8c3cf;
+
+    font:
+        italic 13px Rajdhani;
+
+    line-height:1.6;
+
+    border-left:
+        2px solid var(--cyan);
+
+    background:
+        rgba(0,0,0,.18);
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* profile frame */
+
+.profile-frame{
+    position:relative;
+
+    width:min(360px,100%);
+
+    padding:12px;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.18),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.65),
+        inset 0 1px rgba(255,255,255,.2);
+
+    transform:
+        rotate(2deg);
+
+    transition:.5s;
+
+    z-index:2;
+}
+
+.profile-frame:hover{
+    transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.015);
+}
+
+.profile-frame img{
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:23px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+}
+
+
+/* HUD */
+
+.hud{
+    position:absolute;
+
+    right:-50px;
+    bottom:40px;
+
+    z-index:5;
+
+    padding:16px 19px;
+
+    border-radius:16px;
+
+    background:
+        rgba(3,5,14,.82);
+
+    border:
+        1px solid rgba(97,245,255,.25);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.5);
+
+    font:
+        11px Rajdhani;
+
+    letter-spacing:1px;
+}
+
+.hud strong{
+    color:var(--cyan);
+
+    display:block;
+
+    margin-bottom:5px;
+}
+
+
+/* =========================================================
+   FEATURE STRIP
+========================================================= */
+
+.feature-strip{
+    position:absolute;
+
+    left:50%;
+    bottom:35px;
+
+    transform:
+        translateX(-50%);
+
+    width:min(760px,88%);
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    padding:8px;
+
+    border-radius:23px;
+
+    background:
+        rgba(7,8,18,.7);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5);
+}
+
+.feature{
+    padding:18px 12px;
+
+    text-align:center;
+
+    border-right:
+        1px solid rgba(255,255,255,.08);
+}
+
+.feature:last-child{
+    border-right:0;
+}
+
+.feature-icon{
+    font-size:25px;
+
+    margin-bottom:8px;
+
+    color:var(--cyan);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(97,245,255,.45)
+        );
+}
+
+.feature strong{
+    display:block;
+
+    font:
+        600 13px Rajdhani;
+
+    margin-bottom:4px;
+}
+
+.feature span{
+    color:#8e8997;
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.head{
+    max-width:850px;
+
+    text-align:center;
+
+    margin:
+        0 auto 50px;
+}
+
+.kicker{
+    color:var(--cyan);
+
+    font:
+        700 11px Rajdhani;
+
+    letter-spacing:4px;
+}
+
+.head h2{
+    margin-top:13px;
+
+    font:
+        700 clamp(42px,6vw,72px)/1 Rajdhani;
+
+    letter-spacing:-2px;
+}
+
+.head p{
+    margin-top:17px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.grid3{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.grid4{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.card{
+    position:relative;
+
+    padding:27px;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s,
+        border-color .3s;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    top:-100px;
+    right:-80px;
+
+    border-radius:50%;
+
+    background:
+        rgba(97,245,255,.08);
+
+    filter:blur(30px);
+
+    pointer-events:none;
+}
+
+.card:hover{
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(97,245,255,.35);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.2),
+        0 25px 70px rgba(0,0,0,.6),
+        0 0 30px rgba(97,245,255,.07);
+}
+
+.card h3{
+    font:
+        700 23px Rajdhani;
+
+    margin:
+        9px 0 12px;
+}
+
+.card p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.75;
+}
+
+.num{
+    color:var(--cyan);
+
+    font:
+        700 10px Rajdhani;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:18px;
+}
+
+.tag{
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    border:
+        1px solid rgba(97,245,255,.15);
+
+    background:
+        rgba(97,245,255,.045);
+
+    color:#aaa7b3;
+
+    font:
+        600 9px Rajdhani;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile{
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap:18px;
+}
+
+.profile-main{
+    padding:35px;
+}
+
+.profile-main h3{
+    font:
+        700 32px Rajdhani;
+
+    margin-bottom:18px;
+}
+
+.profile-main p{
+    color:var(--muted);
+
+    line-height:1.85;
+
+    margin-bottom:17px;
+}
+
+.checks{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    margin-top:25px;
+}
+
+.check{
+    padding:13px;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    font:
+        600 11px Rajdhani;
+
+    color:#d8d4df;
+}
+
+.metricgrid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.metric{
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.metric strong{
+    font:
+        700 50px Rajdhani;
+
+    color:var(--cyan);
+}
+
+.metric span{
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   DOCUMENT LIST
+========================================================= */
+
+.doc ul{
+    list-style:none;
+
+    margin-top:18px;
+}
+
+.doc li{
+    padding:8px 0;
+
+    color:#aaa7b3;
+
+    font-size:12px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+}
+
+.doc li::before{
+    content:"▹";
+
+    color:var(--cyan);
+
+    margin-right:8px;
+}
+
+.docactions{
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    padding:55px;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.contact h2{
+    font:
+        700 clamp(48px,7vw,82px) Rajdhani;
+
+    margin:
+        12px 0 18px;
+}
+
+.contact p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+.contactlinks{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:28px;
+}
+
+.contactlink{
+    min-width:150px;
+
+    padding:15px 20px;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.045);
+
+    font:
+        700 11px Rajdhani;
+
+    letter-spacing:1px;
+
+    transition:.25s;
+}
+
+.contactlink:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(97,245,255,.12);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:45px 0;
+
+    text-align:center;
+
+    color:#77727f;
+
+    font:
+        11px Rajdhani;
+
+    letter-spacing:2px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+footer b{
+    color:white;
+}
+
+
+/* =========================================================
+   RESUME MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:1000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+        rgba(0,0,0,.78);
+
+    backdrop-filter:blur(14px);
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modalbox{
+    position:relative;
+
+    width:min(950px,100%);
+
+    height:min(88vh,850px);
+
+    padding:20px;
+
+    border-radius:25px;
+}
+
+.modalbox h3{
+    font:
+        700 18px Rajdhani;
+
+    color:var(--cyan);
+
+    margin-bottom:14px;
+}
+
+.pdf{
+    width:100%;
+    height:calc(100% - 45px);
+
+    border:0;
+
+    border-radius:14px;
+
+    background:white;
+}
+
+.close{
+    position:absolute;
+
+    right:20px;
+    top:14px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.1);
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    z-index:5;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+    opacity:1;
+
+    transform:none;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll{
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    text-align:center;
+
+    color:#aaa;
+
+    font:
+        600 10px Rajdhani;
+
+    letter-spacing:2px;
+}
+
+.scroll-line{
+    width:35px;
+    height:55px;
+
+    margin:auto auto 9px;
+
+    border:
+        1px solid rgba(255,255,255,.35);
+
+    border-radius:20px;
+
+    position:relative;
+}
+
+.scroll-line::after{
+    content:"";
+
+    position:absolute;
+
+    width:4px;
+    height:9px;
+
+    left:50%;
+    top:9px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:5px;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan);
+
+    animation:
+        scrollDown 1.8s infinite;
+}
+
+@keyframes scrollDown{
+
+    0%{
+        transform:
+            translate(-50%,0);
+
+        opacity:1;
+    }
+
+    80%{
+        transform:
+            translate(-50%,22px);
+
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .actions{
+        justify-content:center;
+    }
+
+    .hero-panel{
+        min-height:500px;
+    }
+
+    .quote{
+        left:0;
+    }
+
+    .hud{
+        right:0;
+    }
+
+    .profile{
+        grid-template-columns:1fr;
+    }
+
+    .grid3{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .grid4{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tokyo-label{
+        display:none;
+    }
+}
+
+
+@media(max-width:700px){
+
+    header{
+        padding:10px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav.open nav ul{
+        display:flex;
+
+        position:absolute;
+
+        left:0;
+        right:0;
+        top:67px;
+
+        flex-direction:column;
+
+        padding:12px;
+
+        background:
+            rgba(4,5,14,.95);
+
+        border:
+            1px solid var(--line);
+
+        border-radius:18px;
+
+        backdrop-filter:blur(25px);
+    }
+
+    .hero h1{
+        font-size:58px;
+
+        letter-spacing:-3px;
+    }
+
+    .feature-strip{
+        position:relative;
+
+        left:auto;
+        bottom:auto;
+
+        transform:none;
+
+        margin:
+            40px auto 0;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    #home{
+        padding-bottom:60px;
+    }
+
+    .grid3,
+    .grid4{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .profile-frame{
+        width:310px;
+    }
+
+    .quote{
+        top:-20px;
+        left:0;
+
+        font-size:11px;
+    }
+
+    .hud{
+        right:-5px;
+
+        font-size:9px;
+    }
+
+    .contact{
+        padding:35px 20px;
+    }
+}
+
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .feature-strip{
+        width:100%;
+    }
+
+    .feature{
+        padding:14px 5px;
+    }
+
+    .profile-frame{
+        width:270px;
+    }
+
+    .metricgrid,
+    .checks{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+.background-slideshow {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+    background-image: url("assets/image1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: opacity 1.5s ease-in-out;
+
+    animation: kenburns 12s ease-in-out infinite alternate;
+}
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -9;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.78),
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.75)
+    );
+
+    pointer-events: none;
+}
+
+@keyframes kenburns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="background-slideshow"></div>
+<div class="background-overlay"></div>
+
+<!-- Your existing website content -->
+
+<!-- ======================================================
+     CINEMATIC BACKGROUND
+======================================================= -->
+
+<div class="anime-background">
+
+    <!-- YOUR UPLOADED ANIME IMAGE -->
+    <img
+        src=C:\Users\chand\OneDrive\Documents\GitHub\darshan_kumar_github.io\assests\darshan-profile.jpg
+        alt=""
+        id="animeBackground">
+
+    <div class="anime-color"></div>
+
+</div>
+
+
+<div class="grid-overlay"></div>
+
+<div class="scanlines"></div>
+
+<div class="particles" id="particles"></div>
+
+
+<!-- ======================================================
+     NAVIGATION
+======================================================= -->
+
+<header>
+
+<div class="wrap nav" id="nav">
+
+    <a href="#home" class="brand">
+
+        <span class="brandmark">
+            ⚙
+        </span>
+
+        <span>
+            DK // ENGINEERING
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu"
+        id="menu">
+        ☰
+    </button>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#home"
+                   class="active">
+                   HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    SKILLS
+                </a>
+            </li>
+
+            <li>
+                <a href="#experience">
+                    EXPERIENCE
+                </a>
+            </li>
+
+            <li>
+                <a href="#documents">
+                    DOCUMENTS
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    PROJECTS
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<section id="home">
+
+<div class="tokyo-label">
+    東京卍會
+</div>
+
+
+<div class="wrap hero">
+
+
+<!-- LEFT -->
+
+<div class="reveal">
+
+    <div class="badge">
+
+        <span class="pulse"></span>
+
+        INSTRUMENTATION & CONTROL ENGINEER
+
+    </div>
+
+
+    <h1>
+
+        <span class="small">
+            DARSHAN KUMAR G
+        </span>
+
+        MEASURE.<br>
+
+        <span class="gradient">
+            CONTROL.
+        </span><br>
+
+        AUTOMATE.
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        Instrumentation & Control Engineer with hands-on
+        industrial exposure in a 200 TPD Liquid Air
+        Separation Unit, cryogenic processes, field
+        instrumentation, Yokogawa CENTUM VP R6 DCS,
+        PLC/HMI automation, P&ID development,
+        electrical design, troubleshooting and process safety.
+
+    </p>
+
+
+    <div class="actions">
+
+        <a
+            class="btn primary"
+            href="#experience">
+
+            ⚡
+            ENTER ENGINEER MODE
+
+        </a>
+
+
+        <a
+            class="btn"
+            href="C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\Documents\DARSHAN_I&C_Engg_Resume.pdf"
+            download>
+
+            ↓
+            DOWNLOAD RESUME
+
+        </a>
+
+
+        <button
+            class="btn"
+            id="openResume">
+
+            ◈
+            VIEW RESUME
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="hero-panel reveal">
+
+    <div class="crosshair"></div>
+
+
+    <div class="quote">
+
+        “Discipline creates the freedom
+        to build a better future.”
+
+    </div>
+
+
+    <div class="profile-frame">
+
+        <img
+            src="C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\darshan-profile.jpg"
+            alt="Darshan Kumar G">
+
+    </div>
+
+
+    <div class="hud">
+
+        <strong>
+            ENGINEER MODE // ACTIVE
+        </strong>
+
+        PROCESS • AUTOMATION • CONTROL
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- FEATURE STRIP -->
+
+<div class="feature-strip reveal">
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ⚙
+        </div>
+
+        <strong>
+            Process Control
+        </strong>
+
+        <span>
+            INSTRUMENTATION
+        </span>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ▣
+        </div>
+
+        <strong>
+            DCS & PLC
+        </strong>
+
+        <span>
+            AUTOMATION
+        </span>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            ◈
+        </div>
+
+        <strong>
+            Simulation
+        </strong>
+
+        <span>
+            PROCESS ANALYSIS
+        </span>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            💡
+        </div>
+
+        <strong>
+            Real World
+        </strong>
+
+        <span>
+            ENGINEERING IMPACT
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="scroll">
+
+    <div class="scroll-line"></div>
+
+    SCROLL DOWN
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ABOUT
+======================================================= -->
+
+<section id="about">
+
+<div class="wrap">
+
+
+<div class="head reveal">
+
+    <div class="kicker">
+        01 // PROFILE
+    </div>
+
+    <h2>
+        Engineer the
+        <span class="gradient">
+            whole loop.
+        </span>
+    </h2>
+
+    <p>
+        My approach connects the process, field instrument,
+        signal, control system, final element, documentation
+        and safety layer.
+    </p>
+
+</div>
+
+
+<div class="profile">
+
+
+<article class="glass profile-main reveal">
+
+    <h3>
+        Who I Am
+    </h3>
+
+
+    <p>
+
+        I am an Instrumentation & Control Engineer currently
+        working as a Graduate Engineer Trainee at INOX Air Products.
+        My current industrial exposure is centered around a
+        200 TPD Liquid Air Separation Unit and cryogenic
+        process monitoring.
+
+    </p>
+
+
+    <p>
+
+        I work across the boundary between field instrumentation
+        and control systems: observing process parameters,
+        interpreting P&IDs and CLDs, monitoring DCS trends,
+        supporting calibration and troubleshooting, and
+        understanding how control actions influence plant behaviour.
+
+    </p>
+
+
+    <div class="checks">
+
+        <div class="check">
+            🎛 Process Instrumentation
+        </div>
+
+        <div class="check">
+            🏭 Cryogenic / ASU Exposure
+        </div>
+
+        <div class="check">
+            🖥 DCS & PLC Automation
+        </div>
+
+        <div class="check">
+            📐 P&ID / Plant Design
+        </div>
+
+        <div class="check">
+            🔧 Troubleshooting & RCA
+        </div>
+
+        <div class="check">
+            🛡 Process Safety
+        </div>
+
+    </div>
+
+</article>
+
+
+<div class="metricgrid">
+
+    <div class="glass metric reveal">
+
+        <strong>
+            200
+        </strong>
+
+        <span>
+            TPD Liquid Air Separation Unit exposure
+        </span>
+
+    </div>
+
+
+    <div class="glass metric reveal">
+
+        <strong>
+            3
+        </strong>
+
+        <span>
+            Industrial roles across instrumentation,
+            automation & electrical design
+        </span>
+
+    </div>
+
+
+    <div class="glass metric reveal">
+
+        <strong>
+            6+
+        </strong>
+
+        <span>
+            PLC platforms / ecosystems encountered
+        </span>
+
+    </div>
+
+
+    <div class="glass metric reveal">
+
+        <strong>
+            8.03
+        </strong>
+
+        <span>
+            B.E. CGPA
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SKILLS
+======================================================= -->
+
+<section id="skills">
+
+<div class="wrap">
+
+<div class="head reveal">
+
+    <div class="kicker">
+        02 // TECHNICAL CORE
+    </div>
+
+    <h2>
+        My
+        <span class="gradient">
+            Engineering Arsenal
+        </span>
+    </h2>
+
+    <p>
+        Technical capabilities based on current experience,
+        training and engineering foundation.
+    </p>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROCESS CONTROL
+    </div>
+
+    <h3>
+        Instrumentation
+    </h3>
+
+    <p>
+        Process measurement, sensors, transmitters,
+        calibration, control valves, process analyzers,
+        P&ID/PFD interpretation and control-loop fundamentals.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">Sensors</span>
+        <span class="tag">Transmitters</span>
+        <span class="tag">Calibration</span>
+        <span class="tag">Control Valves</span>
+        <span class="tag">P&ID</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        DCS / PLC
+    </div>
+
+    <h3>
+        Automation
+    </h3>
+
+    <p>
+        DCS monitoring, PLC logic, HMI concepts,
+        alarms, trips, interlocks, control logic
+        and industrial automation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">Yokogawa CENTUM VP R6</span>
+        <span class="tag">PLC</span>
+        <span class="tag">HMI</span>
+        <span class="tag">Trips</span>
+        <span class="tag">Interlocks</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        ENGINEERING DESIGN
+    </div>
+
+    <h3>
+        P&ID & Plant Design
+    </h3>
+
+    <p>
+        P&ID interpretation, AutoCAD 2D,
+        AutoCAD Plant 3D, instrumentation relationships
+        and engineering documentation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">AutoCAD</span>
+        <span class="tag">Plant 3D</span>
+        <span class="tag">P&ID</span>
+        <span class="tag">CLD</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        TROUBLESHOOTING
+    </div>
+
+    <h3>
+        RCA & Maintenance
+    </h3>
+
+    <p>
+        Field observations, troubleshooting,
+        root-cause analysis, calibration support
+        and maintenance workflow awareness.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">RCA</span>
+        <span class="tag">Troubleshooting</span>
+        <span class="tag">Calibration</span>
+        <span class="tag">Maintenance</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROCESS SAFETY
+    </div>
+
+    <h3>
+        Safety Systems
+    </h3>
+
+    <p>
+        HAZOP awareness, LOTO, PTW/SWP,
+        trips, interlocks, SIS concepts
+        and hazardous-area instrumentation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">HAZOP</span>
+        <span class="tag">LOTO</span>
+        <span class="tag">SIS</span>
+        <span class="tag">IEC 61511</span>
+        <span class="tag">IEC 60079</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        DIGITAL ENGINEERING
+    </div>
+
+    <h3>
+        Engineering Workflow
+    </h3>
+
+    <p>
+        Engineering data handling, technical reports,
+        presentations, structured observations and
+        industrial documentation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">MS Excel</span>
+        <span class="tag">PowerPoint</span>
+        <span class="tag">SAP</span>
+        <span class="tag">Reports</span>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     EXPERIENCE
+======================================================= -->
+
+<section id="experience">
+
+<div class="wrap">
+
+<div class="head reveal">
+
+    <div class="kicker">
+        03 // EXPERIENCE
+    </div>
+
+    <h2>
+        Industrial
+        <span class="gradient">
+            Exposure
+        </span>
+    </h2>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        CURRENT ROLE
+    </div>
+
+    <h3>
+        Graduate Engineer Trainee
+    </h3>
+
+    <p>
+        INOX Air Products — industrial exposure
+        in instrumentation, process monitoring,
+        DCS operation, field instrumentation,
+        troubleshooting and plant systems.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">ASU</span>
+        <span class="tag">DCS</span>
+        <span class="tag">Instrumentation</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        DESIGN
+    </div>
+
+    <h3>
+        Design Engineering
+    </h3>
+
+    <p>
+        Exposure to engineering drawings,
+        P&ID interpretation, AutoCAD,
+        Plant 3D and technical documentation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">P&ID</span>
+        <span class="tag">AutoCAD</span>
+        <span class="tag">Plant 3D</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        AUTOMATION
+    </div>
+
+    <h3>
+        Application Engineering
+    </h3>
+
+    <p>
+        Exposure to instrumentation and automation
+        applications, control systems and
+        industrial engineering requirements.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">PLC</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Control</span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     DOCUMENTS
+======================================================= -->
+
+<section id="documents">
+
+<div class="wrap">
+
+<div class="head reveal">
+
+    <div class="kicker">
+        04 // ENGINEERING DOCUMENTATION
+    </div>
+
+    <h2>
+        Engineering
+        <span class="gradient">
+            Records
+        </span>
+    </h2>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        PROCESS
+    </div>
+
+    <h3>
+        Process Documents
+    </h3>
+
+    <ul>
+
+        <li>PFD — Process Flow Diagram</li>
+        <li>P&ID — Piping & Instrumentation Diagram</li>
+        <li>Process descriptions</li>
+        <li>Equipment datasheets</li>
+        <li>Operating philosophies</li>
+
+    </ul>
+
+</div>
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        INSTRUMENTATION
+    </div>
+
+    <h3>
+        Instrument Documents
+    </h3>
+
+    <ul>
+
+        <li>Instrument index</li>
+        <li>Instrument datasheets</li>
+        <li>I/O list</li>
+        <li>Loop diagrams</li>
+        <li>Hook-up drawings</li>
+        <li>Instrument location plans</li>
+
+    </ul>
+
+</div>
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        CONTROL
+    </div>
+
+    <h3>
+        Control Documents
+    </h3>
+
+    <ul>
+
+        <li>Control narratives</li>
+        <li>Cause & Effect</li>
+        <li>Logic diagrams</li>
+        <li>Alarm lists</li>
+        <li>Trip / interlock lists</li>
+
+    </ul>
+
+</div>
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        ELECTRICAL
+    </div>
+
+    <h3>
+        Electrical Documents
+    </h3>
+
+    <ul>
+
+        <li>SLD</li>
+        <li>Wiring diagrams</li>
+        <li>Panel layouts</li>
+        <li>Cable schedules</li>
+        <li>Termination drawings</li>
+
+    </ul>
+
+</div>
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        PROJECT
+    </div>
+
+    <h3>
+        Project Records
+    </h3>
+
+    <ul>
+
+        <li>MOC documentation</li>
+        <li>FAT / SAT records</li>
+        <li>Commissioning reports</li>
+        <li>Test reports</li>
+        <li>Vendor documents</li>
+        <li>As-built drawings</li>
+
+    </ul>
+
+</div>
+
+
+<div class="glass card doc reveal">
+
+    <div class="num">
+        MAINTENANCE
+    </div>
+
+    <h3>
+        Maintenance Records
+    </h3>
+
+    <ul>
+
+        <li>Calibration reports</li>
+        <li>Inspection checklists</li>
+        <li>Maintenance reports</li>
+        <li>Equipment history</li>
+        <li>Work records</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div
+    class="glass card reveal"
+    style="margin-top:18px;">
+
+    <div class="num">
+        MY RESUME
+    </div>
+
+    <h3>
+        Darshan Kumar G — Resume
+    </h3>
+
+    <p>
+        View or download my latest engineering resume.
+    </p>
+
+    <div class="docactions">
+
+        <button
+            class="btn primary"
+            id="openResume2">
+
+            ◈ VIEW PDF
+
+        </button>
+
+
+        <a
+            class="btn"
+            href="documents/Darshan_Kumar_Resume.pdf"
+            download>
+
+            ↓ DOWNLOAD PDF
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     PROJECTS
+======================================================= -->
+
+<section id="projects">
+
+<div class="wrap">
+
+<div class="head reveal">
+
+    <div class="kicker">
+        05 // PROJECTS
+    </div>
+
+    <h2>
+        Selected
+        <span class="gradient">
+            Engineering Work
+        </span>
+    </h2>
+
+</div>
+
+
+<div class="grid3">
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROJECT 01 // SAFETY AUTOMATION
+    </div>
+
+    <h3>
+        Automated Emergency Shower & Eyewash
+    </h3>
+
+    <p>
+        Safety-automation concept involving sensing,
+        PLC timer logic, 24 V DC NC solenoid valves,
+        flow confirmation, pressure monitoring,
+        hooter/beacon indication and DCS/SCADA integration.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">PLC</span>
+        <span class="tag">Sensors</span>
+        <span class="tag">Safety</span>
+        <span class="tag">DCS/SCADA</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROJECT 02 // IOT
+    </div>
+
+    <h3>
+        Smart Street Lighting
+    </h3>
+
+    <p>
+        Smart street-lighting project using piezoelectric
+        sensors and IoT technology, focused on sensing,
+        intelligent operation and energy-aware automation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">IoT</span>
+        <span class="tag">Sensors</span>
+        <span class="tag">Piezoelectric</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROJECT 03 // EMBEDDED
+    </div>
+
+    <h3>
+        Arduino Footstep Power Generation
+    </h3>
+
+    <p>
+        Energy-harvesting project using piezoelectric
+        transducers and Arduino-based electronics.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">Arduino</span>
+        <span class="tag">Embedded</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        PROJECT 04 // AUTOMATION
+    </div>
+
+    <h3>
+        Automatic Water Level Indicator
+    </h3>
+
+    <p>
+        Automation project focused on water-level sensing,
+        detection and indication.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">Level</span>
+        <span class="tag">Sensors</span>
+        <span class="tag">Control</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        INDUSTRIAL STUDY
+    </div>
+
+    <h3>
+        ASU Instrumentation Study
+    </h3>
+
+    <p>
+        Study of air-separation process behaviour,
+        critical parameters, field instrumentation,
+        DCS monitoring, alarms, trips and control loops
+        from industrial exposure.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">ASU</span>
+        <span class="tag">Cryogenic</span>
+        <span class="tag">DCS</span>
+
+    </div>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <div class="num">
+        DESIGN WORK
+    </div>
+
+    <h3>
+        P&ID & Plant 3D Development
+    </h3>
+
+    <p>
+        P&ID interpretation and development using
+        AutoCAD 2D and AutoCAD Plant 3D with attention
+        to instrumentation relationships and engineering documentation.
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">P&ID</span>
+        <span class="tag">AutoCAD</span>
+        <span class="tag">Plant 3D</span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     PROCESS SAFETY
+======================================================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head reveal">
+
+    <div class="kicker">
+        06 // PROCESS SAFETY
+    </div>
+
+    <h2>
+        Safety is part of the
+        <span class="gradient">
+            control loop.
+        </span>
+    </h2>
+
+</div>
+
+
+<div class="grid4">
+
+
+<div class="glass card reveal">
+
+    <h3>🛡 EHS</h3>
+
+    <p>
+        Industrial environment, health and safety fundamentals.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>🔒 LOTO</h3>
+
+    <p>
+        Lockout/Tagout concepts for safe maintenance.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>⚠ HAZOP</h3>
+
+    <p>
+        Hazard identification and structured risk review awareness.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>📋 PTW / SWP</h3>
+
+    <p>
+        Permit-to-work and safe-work practices.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>🚨 TRIPS</h3>
+
+    <p>
+        Protective shutdown and trip-system concepts.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>🔄 INTERLOCKS</h3>
+
+    <p>
+        Logic preventing unsafe operating conditions.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>⛔ SIS</h3>
+
+    <p>
+        Safety Instrumented System concepts and
+        IEC 61511 awareness.
+    </p>
+
+</div>
+
+
+<div class="glass card reveal">
+
+    <h3>🔥 IEC 60079</h3>
+
+    <p>
+        Hazardous-area instrumentation awareness.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CONTACT
+======================================================= -->
+
+<section id="contact">
+
+<div class="wrap">
+
+<div class="glass contact reveal">
+
+    <div class="kicker">
+        07 // CONTACT
+    </div>
+
+    <h2>
+        LET'S
+        <span class="gradient">
+            CONNECT.
+        </span>
+    </h2>
+
+    <p>
+        Open to opportunities in instrumentation,
+        process control, industrial automation,
+        application engineering, design engineering
+        and plant systems.
+    </p>
+
+
+    <div class="contactlinks">
+
+
+        <a
+            class="contactlink"
+            href="mailto:kumargdarshan@gmail.com">
+
+            ✉ EMAIL
+
+        </a>
+
+
+        <a
+            class="contactlink"
+            href="tel:+919611472710">
+
+            ☎ PHONE
+
+        </a>
+
+
+        <!-- YOUR LINKEDIN -->
+
+        <a
+            class="contactlink"
+            href="https://www.linkedin.com/in/darshan-kumar-g-8095a3314/"
+            target="_blank"
+            rel="noopener">
+
+            in LINKEDIN
+
+        </a>
+
+
+        <!-- YOUR GITHUB -->
+
+        <a
+            class="contactlink"
+            href="https://github.com/Darshan-kumar-13"
+            target="_blank"
+            rel="noopener">
+
+            ◉ GITHUB
+
+        </a>
+
+
+        <!-- YOUR RESUME -->
+
+        <a
+            class="contactlink"
+            href="documents/Darshan_Kumar_Resume.pdf"
+            download>
+
+            ↓ RESUME
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+<div class="wrap">
+
+    <b>
+        DARSHAN KUMAR G
+    </b>
+
+    · Instrumentation & Control Engineer
+    · Bengaluru, India
+
+    <br><br>
+
+    MEASURE · CONTROL · AUTOMATE · IMPROVE
+
+</div>
+
+</footer>
+
+
+
+<!-- ======================================================
+     RESUME MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="modal">
+
+    <div class="glass modalbox">
+
+        <button
+            class="close"
+            id="close">
+
+            ×
+
+        </button>
+
+        <h3>
+            RESUME // PREVIEW
+        </h3>
+
+        <iframe
+            class="pdf"
+            src="C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\Documents\DARSHAN_I&C_Engg_Resume.pdf">
+        </iframe>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   RESUME MODAL
+========================================================= */
+
+const modal =
+    document.getElementById("modal");
+
+const openResume =
+    document.getElementById("openResume");
+
+const openResume2 =
+    document.getElementById("openResume2");
+
+const close =
+    document.getElementById("close");
+
+
+function showResume(){
+
+    modal.classList.add("open");
+
+}
+
+
+openResume.onclick =
+    showResume;
+
+openResume2.onclick =
+    showResume;
+
+
+close.onclick =
+    function(){
+
+        modal.classList.remove("open");
+
+    };
+
+
+modal.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === modal){
+
+            modal.classList.remove("open");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const nav =
+    document.getElementById("nav");
+
+const menu =
+    document.getElementById("menu");
+
+
+menu.onclick =
+    function(){
+
+        nav.classList.toggle("open");
+
+    };
+
+
+document
+    .querySelectorAll("nav a")
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                nav.classList.remove("open");
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(function(element){
+
+        observer.observe(element);
+
+    });
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        "main section[id]"
+    );
+
+const navLinks =
+    document.querySelectorAll(
+        "nav a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        let current = "home";
+
+        sections.forEach(
+            function(section){
+
+                const top =
+                    section.offsetTop - 250;
+
+                if(window.scrollY >= top){
+
+                    current =
+                        section.id;
+
+                }
+
+            }
+        );
+
+
+        navLinks.forEach(
+            function(link){
+
+                link.classList.remove(
+                    "active"
+                );
+
+                if(
+                    link.getAttribute("href")
+                    === "#" + current
+                ){
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   MOUSE PARALLAX
+========================================================= */
+
+const background =
+    document.getElementById(
+        "animeBackground"
+    );
+
+
+let targetX = 0;
+let targetY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+
+window.addEventListener(
+    "mousemove",
+    function(e){
+
+        targetX =
+            (e.clientX / window.innerWidth - .5)
+            * -22;
+
+        targetY =
+            (e.clientY / window.innerHeight - .5)
+            * -16;
+
+    }
+);
+
+
+function animateParallax(){
+
+    currentX +=
+        (targetX - currentX) * .045;
+
+    currentY +=
+        (targetY - currentY) * .045;
+
+
+    background.style.setProperty(
+        "--mouse-x",
+        currentX + "px"
+    );
+
+    background.style.setProperty(
+        "--mouse-y",
+        currentY + "px"
+    );
+
+
+    requestAnimationFrame(
+        animateParallax
+    );
+
+}
+
+animateParallax();
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+const particleContainer =
+    document.getElementById(
+        "particles"
+    );
+
+
+for(let i=0;i<45;i++){
+
+    const particle =
+        document.createElement("span");
+
+    particle.className =
+        "particle";
+
+
+    particle.style.left =
+        Math.random()*100 + "%";
+
+
+    particle.style.animationDuration =
+        (8 + Math.random()*14) + "s";
+
+
+    particle.style.animationDelay =
+        (-Math.random()*15) + "s";
+
+
+    particle.style.opacity =
+        (.15 + Math.random()*.55);
+
+
+    const size =
+        (1 + Math.random()*2.5);
+
+
+    particle.style.width =
+        size + "px";
+
+    particle.style.height =
+        size + "px";
+
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================================================
+   3D BUTTON TILT
+========================================================= */
+
+document
+    .querySelectorAll(".btn")
+    .forEach(function(button){
+
+        button.addEventListener(
+            "mousemove",
+            function(e){
+
+                const rect =
+                    button.getBoundingClientRect();
+
+
+                const x =
+                    e.clientX - rect.left;
+
+
+                const y =
+                    e.clientY - rect.top;
+
+
+                const rotateX =
+                    ((y / rect.height) - .5)
+                    * -7;
+
+
+                const rotateY =
+                    ((x / rect.width) - .5)
+                    * 7;
+
+
+                button.style.transform =
+                    `translateY(-5px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)`;
+
+            }
+        );
+
+
+        button.addEventListener(
+            "mouseleave",
+            function(){
+
+                button.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   ESC CLOSE MODAL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            modal.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+</script>
+<script>
+const backgroundImages = [
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image1.jpg",
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image2.jpg",
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image3.jpg",
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image4.jpg",
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image5.jpg",
+    "C:\Users\chand\OneDrive\Desktop\DARSHAN_KUMAR_PORTFOLIO\assests\image6.jpg"
+];
+
+let currentImage = 0;
+
+const background = document.querySelector(".background-slideshow");
+
+setInterval(() => {
+
+    background.style.opacity = "0";
+
+    setTimeout(() => {
+
+        currentImage++;
+
+        if (currentImage >= backgroundImages.length) {
+            currentImage = 0;
+        }
+
+        background.style.backgroundImage =
+            `url("${backgroundImages[currentImage]}")`;
+
+        background.style.opacity = "1";
+
+    }, 1500);
+
+}, 7000);
+</script>
+
+</body>
+</html>
+</body>
+</html>
